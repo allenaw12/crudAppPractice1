@@ -1,0 +1,24 @@
+body {
+    background-color: #003C60;
+    color: white;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+h1, h2 {
+    width: 90%;
+    margin: 1rem auto;
+    background-color: rgb(123, 125, 124);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+section {
+    display: inline-block;
+    width: 30%;
+    margin: 0 auto;
+}
+
+input {
+    margin: .5rem;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>Jurassic World</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="/style.css">
+	</head>
+	<body>
+
+		<h1>Welcome, to Jurassic World!</h1>
+		<section>
+			<h3>Add quote</h3>
+			<form action="/quotes" method="POST"><!--method tells browsers what kind of request to send, action tells them where to send it-->
+				<input type="text" placeholder="name" name="name">
+				<input type="text" placeholder="quote" name="quote">
+				<button type="submit">Submit</button>
+			</form>
+		</section>
+		<section>
+			<h3>T-rex appears!</h2>
+			<p>Replace quote with a Tyranosaur roar!</p>
+			<button id="update-button">Replace quote</button>
+		</section>
+
+		<section>
+			<h3>Lead the T-rex away!</h2>
+			<p>Remove one T-rex roar. Does nothing if there are no more roars.</p>
+			<button id="delete-button">Delete a roar</button>
+			<div id="message"></div>
+		</section>
+        
+		<h2> Quotes </h2>
+
+			<ul class="quotes">
+				<!--Loop through quotes-->
+				<% for(var i=0; i<quotes.length; i++) {%>
+					<li class="quote">
+						<!--Output name from iterated quote object-->
+						<span><%= quotes[i].name %></span>:
+						<!--Output quote from iterated quote object-->
+						<span><%= quotes[i].quote %></span>
+					</li>
+				<% } %>
+			</ul>
+	
+	<script src="/main.js"></script>	
+	</body>
+</html>
