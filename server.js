@@ -1,18 +1,19 @@
 //console.log('Hold on to your butts...')
-
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const req = require('express/lib/request')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
 
+const connectionString = process.env.MONGODB_URL
 // MongoClient.connect('mongodb+srv://allena:dinosaur@cluster0.jmwtr.mongodb.net/?retryWrites=true&w=majority', (err, client) => {
 //     if (err) console.error(err)
 //     console.log("I think we're back in business")
 //     const db = client.db('jurassic-quotes')
 // })
 
-MongoClient.connect('mongodb+srv://allena:dinosaur@cluster0.jmwtr.mongodb.net/?retryWrites=true&w=majority', {useUnifiedTopology: true})
+MongoClient.connect(connectionString, {useUnifiedTopology: true})
     .then(client => {
         console.log("I think we're back in business")
         const db = client.db('jurassic-quotes')
