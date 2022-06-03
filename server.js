@@ -7,7 +7,7 @@ const app = express()
 const MongoClient = require('mongodb').MongoClient
 
 const connectionString = process.env.MONGODB_URL
-// MongoClient.connect('mongodb+srv://allena:dinosaur@cluster0.jmwtr.mongodb.net/?retryWrites=true&w=majority', (err, client) => {
+// MongoClient.connect(connectionString, (err, client) => {
 //     if (err) console.error(err)
 //     console.log("I think we're back in business")
 //     const db = client.db('jurassic-quotes')
